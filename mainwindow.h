@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "qlineedit.h"
+#include "settings.h"
+#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +17,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    std::vector<char> getInputs();
 
 private:
     Ui::MainWindow *ui;
+    QLineEdit* wordle_inputs [SETTINGS::NR_GUESSES][SETTINGS::WORD_LENGTH];
 };
 #endif // MAINWINDOW_H
