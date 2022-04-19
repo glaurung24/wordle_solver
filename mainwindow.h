@@ -18,6 +18,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     std::vector<char> getInputs();
+    int startRoutine();
 
 private:
     Ui::MainWindow *ui;

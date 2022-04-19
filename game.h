@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "settings.h"
+#include <vector>
+#include <string>
+
 
 class Game
 {
@@ -11,7 +14,8 @@ public:
     void chooseNewSecretWord();
 
 private:
-    char secret_word[SETTINGS::WORD_LENGTH];
+    std::vector<std::string> official_words;
+    std::string secret_word;
 };
 
 #endif // GAME_H

@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "settings.h"
+#include "game.h"
+#include<QDebug>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,5 +38,12 @@ MainWindow::~MainWindow()
         }
     }
     delete ui;
+}
+
+int MainWindow::startRoutine()
+{
+    Game* game = new Game();
+//    game->chooseNewSecretWord();
+    return 0;
 }
 
