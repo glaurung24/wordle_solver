@@ -9,37 +9,35 @@
 Game::Game()
 {
     try {
-        std::fstream fin;
-        fin.open(SETTINGS::WORDLIST_FILE, std::ios::in);
+        std::ifstream file(SETTINGS::WORDLIST_FILE);
         std::string word;
-        while (std::getline(fin, word)) {
-            if(word.length() != SETTINGS::WORD_LENGTH){
-                throw 1;
-            }
+        if( file.is_open())
+        {
+            while (std::getline(file, word)) {
+                if(word.length() != SETTINGS::WORD_LENGTH){
+                    throw 1;
+                }
 
-            official_words.push_back(word);
+                official_words.push_back(word);
+            }
+            file.close();
         }
+        else
+        {
+            throw 1;
+        }
+
     }
     catch (...) {
         qDebug() <<"ups";
-        throw 1;
-    }
-    for (std::vector<std::string>::iterator it = official_words.begin() ; it != official_words.end(); ++it){
-      QString s = QString::fromStdString(*it);
-      qDebug() << qUtf8Printable(s);
     }
 }
 
 void Game::chooseNewSecretWord()
 {
-    for (std::vector<std::string>::iterator it = official_words.begin() ; it != official_words.end(); ++it){
-      QString s = QString::fromStdString(*it);
-      qDebug() << qUtf8Printable(s);
-    }
     std::srand(time(NULL));
     int guess;
     guess = rand() % official_words.size();
-//    qDebug << guess << std::endl;
     secret_word = official_words[guess];
 }
 

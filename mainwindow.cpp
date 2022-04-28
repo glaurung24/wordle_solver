@@ -43,7 +43,13 @@ MainWindow::~MainWindow()
 int MainWindow::startRoutine()
 {
     Game* game = new Game();
-//    game->chooseNewSecretWord();
+    game->chooseNewSecretWord();
     return 0;
+}
+
+
+void MainWindow::on_submitButton_clicked()
+{
+
 }
 
