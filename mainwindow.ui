@@ -17,8 +17,8 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>-11</x>
-      <y>-1</y>
+      <x>0</x>
+      <y>0</y>
       <width>411</width>
       <height>561</height>
      </rect>
@@ -54,13 +54,20 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>399</x>
-      <y>-1</y>
+      <x>410</x>
+      <y>0</y>
       <width>391</width>
       <height>561</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="newGameButton">
+       <property name="text">
+        <string>New Game</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="submitButton">
        <property name="text">
