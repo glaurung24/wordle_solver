@@ -57,7 +57,7 @@ Game::hint Game::generateHint(std::string guess)
         }
         else
         {
-            unmatched_chars.push_back(char_pos);
+            unmatched_chars.push_back(pos_found);
         }
     }
     for(auto it = unmatched_chars.begin(); it < unmatched_chars.end();it++)
